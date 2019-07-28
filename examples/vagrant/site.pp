@@ -2,7 +2,15 @@ node 'puppet' {
   include ::ntp
 }
 
-node 'control.localdomain' {
+node 'control01.localdomain' {
+  include ::stein::role::controller
+}
+
+node 'control02.localdomain' {
+  include ::stein::role::controller
+}
+
+node 'control03.localdomain' {
   include ::stein::role::controller
 }
 
@@ -14,7 +22,11 @@ node 'network.localdomain' {
   include ::stein::role::network
 }
 
-node 'compute.localdomain' {
+node 'compute01.localdomain' {
+  include ::stein::role::compute
+}
+
+node 'compute02.localdomain' {
   include ::stein::role::compute
 }
 
