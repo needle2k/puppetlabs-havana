@@ -1,5 +1,5 @@
-class havana::role::storage inherits ::havana::role {
-  class { '::havana::profile::firewall': }
-  class { '::havana::profile::glance::api': }
-  class { '::havana::profile::cinder::volume': }
+class stein::role::storage inherits ::stein::role {
+  class { '::stein::profile::firewall': }
+  class { '::stein::profile::glance::api': }
+  class { '::stein::profile::cinder::volume': }
 }
