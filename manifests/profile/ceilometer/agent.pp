@@ -1,4 +1,4 @@
-class havana::profile::ceilometer::agent {
-  class { '::havana::common::ceilometer': } ->
+class stein::profile::ceilometer::agent {
+  class { '::stein::common::ceilometer': } ->
   class { '::ceilometer::agent::compute': }
 }
