@@ -1,4 +1,4 @@
-define havana::resources::user (
+define stein::resources::user (
   $password,
   $tenant,
   $email,
