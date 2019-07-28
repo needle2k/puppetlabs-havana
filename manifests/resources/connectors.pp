@@ -1,7 +1,7 @@
-class havana::resources::connectors {
+class stein::resources::connectors {
 
-  $management_address = hiera('havana::controller::address::management')
-  $password = hiera('havana::mysql::service_password')
+  $management_address = hiera('stein::controller::address::management')
+  $password = hiera('stein::mysql::service_password')
 
   $keystone = "mysql://keystone:${password}@${management_address}/keystone"
   $cinder   = "mysql://cinder:${password}@${management_address}/cinder"
