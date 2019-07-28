@@ -1,4 +1,4 @@
-class havana::setup::cirros {
+class stein::setup::cirros {
   glance_image { 'cirros':
     ensure           => present,
     name             => 'Cirros',
