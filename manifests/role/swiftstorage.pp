@@ -1,6 +1,6 @@
-class havana::role::swiftstorage (
+class stein::role::swiftstorage (
   $zone = undef,
-) inherits ::havana::role  {
-  class { '::havana::profile::firewall': }
-  class { '::havana::profile::swift::storage': zone => $zone }
+) inherits ::stein::role  {
+  class { '::stein::profile::firewall': }
+  class { '::stein::profile::swift::storage': zone => $zone }
 }
