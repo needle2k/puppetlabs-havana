@@ -1,6 +1,6 @@
-class havana::role::compute inherits ::havana::role {
-  class { '::havana::profile::firewall': }
-  class { '::havana::profile::neutron::agent': }
-  class { '::havana::profile::nova::compute': }
-  class { '::havana::profile::ceilometer::agent': }
+class stein::role::compute inherits ::stein::role {
+  class { '::stein::profile::firewall': }
+  class { '::stein::profile::neutron::agent': }
+  class { '::stein::profile::nova::compute': }
+  class { '::stein::profile::ceilometer::agent': }
 }
