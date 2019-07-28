@@ -1,49 +1,49 @@
-havana::region: 'openstack'
+stein::region: 'openstack'
 
 ######## Networks
-havana::network::api: '192.168.11.0/24'
-havana::network::external: '192.168.22.0/24'
-havana::network::management: '172.16.33.0/24'
-havana::network::data: '172.16.44.0/24'
+stein::network::api: '192.168.11.0/24'
+stein::network::external: '192.168.22.0/24'
+stein::network::management: '172.16.33.0/24'
+stein::network::data: '172.16.44.0/24'
 
-havana::network::external::ippool::start: 192.168.22.100
-havana::network::external::ippool::end: 192.168.22.200
-havana::network::external::gateway: 192.168.22.2
-havana::network::external::dns: 192.168.22.2
+stein::network::external::ippool::start: 192.168.22.100
+stein::network::external::ippool::end: 192.168.22.200
+stein::network::external::gateway: 192.168.22.2
+stein::network::external::dns: 192.168.22.2
 
 ######## Private Neutron Network
 
-havana::network::neutron::private: '10.0.0.0/24'
+stein::network::neutron::private: '10.0.0.0/24'
 
 ######## Fixed IPs (controllers)
 
-havana::controller::address::api: '192.168.11.4'
-havana::controller::address::management: '172.16.33.4'
-havana::storage::address::api: '192.168.11.5'
-havana::storage::address::management: '172.16.33.5'
+stein::controller::address::api: '192.168.11.4'
+stein::controller::address::management: '172.16.33.4'
+stein::storage::address::api: '192.168.11.5'
+stein::storage::address::management: '172.16.33.5'
 
 ######## Database
 
-havana::mysql::root_password: 'spam-gak'
-havana::mysql::service_password: 'fuva-wax'
-havana::mysql::allowed_hosts: ['localhost', '127.0.0.1', '172.16.33.%']
+stein::mysql::root_password: 'spam-gak'
+stein::mysql::service_password: 'fuva-wax'
+stein::mysql::allowed_hosts: ['localhost', '127.0.0.1', '172.16.33.%']
 
 ######## RabbitMQ
 
-havana::rabbitmq::user: 'openstack'
-havana::rabbitmq::password: 'pose-vix'
+stein::rabbitmq::user: 'openstack'
+stein::rabbitmq::password: 'pose-vix'
 
 ######## Keystone
 
-havana::keystone::admin_token: 'sosp-kyl'
-havana::keystone::admin_email: 'chris.hoge@puppetlabs.com'
-havana::keystone::admin_password: 'fyby-tet'
+stein::keystone::admin_token: 'sosp-kyl'
+stein::keystone::admin_email: 'chris.hoge@puppetlabs.com'
+stein::keystone::admin_password: 'fyby-tet'
 
-havana::tenants:
+stein::tenants:
     "test":
         description: "Test tenant"
 
-havana::users:
+stein::users:
     "test":
         password: "abc123"
         tenant: "test"
@@ -52,42 +52,42 @@ havana::users:
 
 ######## Glance
 
-havana::glance::password: 'na-mu-va'
+stein::glance::password: 'na-mu-va'
 
 ######## Cinder
 
-havana::cinder::password: 'zi-co-se'
-havana::cinder::volume_size: '4G'
+stein::cinder::password: 'zi-co-se'
+stein::cinder::volume_size: '4G'
 
 ######## Swift
 
-havana::swift::password: 'dexc-flo'
-havana::swift::hash_suffix: 'pop-bang'
+stein::swift::password: 'dexc-flo'
+stein::swift::hash_suffix: 'pop-bang'
 
 ######## Nova
 
-havana::nova::libvirt_type: 'kvm'
-havana::nova::password: 'quuk-paj'
+stein::nova::libvirt_type: 'kvm'
+stein::nova::password: 'quuk-paj'
 
 ######## Neutron
 
-havana::neutron::password: 'whi-rtuz'
-havana::neutron::shared_secret: 'by-sa-bo'
+stein::neutron::password: 'whi-rtuz'
+stein::neutron::shared_secret: 'by-sa-bo'
 
 ######## Ceilometer
-havana::ceilometer::mongo::password: 'whi-truz'
-havana::ceilometer::password: 'whi-truz'
-havana::ceilometer::meteringsecret: 'ceilometersecretkey'
+stein::ceilometer::mongo::password: 'whi-truz'
+stein::ceilometer::password: 'whi-truz'
+stein::ceilometer::meteringsecret: 'ceilometersecretkey'
 
 ######## Heat
-havana::heat::password: 'zap-bang'
-havana::heat::encryption_key: 'heatsecretkey'
+stein::heat::password: 'zap-bang'
+stein::heat::encryption_key: 'heatsecretkey'
 
 
 ######## Horizon
 
-havana::horizon::secret_key: 'whu-ghuk'
+stein::horizon::secret_key: 'whu-ghuk'
 
 ######## Log levels
-havana::verbose: 'True'
-havana::debug: 'True'
+stein::verbose: 'True'
+stein::debug: 'True'
