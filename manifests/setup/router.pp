@@ -1,5 +1,5 @@
-define havana::setup::router {
-  $subnet = hiera('havana::network::neutron::private')
+define stein::setup::router {
+  $subnet = hiera('stein::network::neutron::private')
 
   neutron_router { $title:
     tenant_name          => $title,
