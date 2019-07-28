@@ -1,3 +1,3 @@
-class havana::role {
-  include havana::profile::base
+class stein::role {
+  include stein::profile::base
 }
