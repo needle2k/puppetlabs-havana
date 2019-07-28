@@ -1,19 +1,19 @@
 # The profile to set up the Ceilometer API
 # For co-located api and worker nodes this appear
-# after havana::profile::ceilometer::agent
-class havana::profile::ceilometer::api {
-  havana::resources::controller { 'ceilometer': }
+# after stein::profile::ceilometer::agent
+class stein::profile::ceilometer::api {
+  stein::resources::controller { 'ceilometer': }
 
-  havana::resources::firewall { 'Ceilometer API':
+  stein::resources::firewall { 'Ceilometer API':
     port => '8777',
   }
 
   class { '::ceilometer::keystone::auth':
-    password         => hiera('havana::ceilometer::password'),
-    public_address   => hiera('havana::controller::address::api'),
-    admin_address    => hiera('havana::controller::address::management'),
-    internal_address => hiera('havana::controller::address::management'),
-    region           => hiera('havana::region'),
+    password         => hiera('stein::ceilometer::password'),
+    public_address   => hiera('stein::controller::address::api'),
+    admin_address    => hiera('stein::controller::address::management'),
+    internal_address => hiera('stein::controller::address::management'),
+    region           => hiera('stein::region'),
   }
 
   class { '::ceilometer::agent::central':
@@ -37,7 +37,7 @@ class havana::profile::ceilometer::api {
 
   class { '::ceilometer::collector': }
 
-  include ::havana::common::ceilometer
+  include ::stein::common::ceilometer
 
   mongodb_database { 'ceilometer':
     ensure  => present,
