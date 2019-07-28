@@ -1,13 +1,13 @@
-class havana::setup::sharednetwork {
+class stein::setup::sharednetwork {
 
-  $external_network = hiera('havana::network::external')
-  $start_ip = hiera('havana::network::external::ippool::start')
-  $end_ip   = hiera('havana::network::external::ippool::end')
+  $external_network = hiera('stein::network::external')
+  $start_ip = hiera('stein::network::external::ippool::start')
+  $end_ip   = hiera('stein::network::external::ippool::end')
   $ip_range = "start=${start_ip},end=${end_ip}"
-  $gateway  = hiera('havana::network::external::gateway')
-  $dns      = hiera('havana::network::external::dns')
+  $gateway  = hiera('stein::network::external::gateway')
+  $dns      = hiera('stein::network::external::dns')
 
-  $private_network = hiera('havana::network::neutron::private')
+  $private_network = hiera('stein::network::neutron::private')
 
   neutron_network { 'public':
     tenant_name              => 'services',
@@ -45,6 +45,6 @@ class havana::setup::sharednetwork {
     dns_nameservers  => [$dns],
   } 
 
-  havana::setup::router { 'services': }
-  havana::setup::router { 'test': }
+  stein::setup::router { 'services': }
+  stein::setup::router { 'test': }
 }
