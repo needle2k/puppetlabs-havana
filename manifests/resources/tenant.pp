@@ -1,4 +1,4 @@
-define havana::resources::tenant (
+define stein::resources::tenant (
   $description,
   $enabled = true,
 ) {
@@ -8,5 +8,5 @@ define havana::resources::tenant (
     description => $description,
     enabled     => $enabled,
   }
-
+  
 }
