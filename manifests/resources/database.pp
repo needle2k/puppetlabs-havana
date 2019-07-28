@@ -1,8 +1,8 @@
-define havana::resources::database () {
+define stein::resources::database () {
   class { "::${title}::db::mysql":
     user          => $title,
-    password      => hiera("havana::mysql::service_password"),
+    password      => hiera("stein::mysql::service_password"),
     dbname        => $title,
-    allowed_hosts => hiera('havana::mysql::allowed_hosts'),
+    allowed_hosts => hiera('stein::mysql::allowed_hosts'),
   }
 }
