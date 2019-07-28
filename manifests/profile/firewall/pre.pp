@@ -1,6 +1,6 @@
 # Starts up standard firewall rules. Pre-runs
 
-class havana::profile::firewall::pre {
+class stein::profile::firewall::pre {
 
   # Set up the initial firewall rules for all nodes
   if $::osfamily == 'RedHat' {
