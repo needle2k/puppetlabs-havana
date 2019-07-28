@@ -1,24 +1,24 @@
 # The profile for installing the Swift Proxy
-class havana::profile::swift::proxy {
+class stein::profile::swift::proxy {
 
-  havana::resources::controller { 'swift': }
-  havana::resources::firewall { 'Swift Proxy': port => '8080', }
+  stein::resources::controller { 'swift': }
+  stein::resources::firewall { 'Swift Proxy': port => '8080', }
 
   class { 'swift::keystone::auth':
-    password         => hiera('havana::swift::password'),
-    public_address   => hiera('havana::controller::address::api'),
-    admin_address    => hiera('havana::controller::address::management'),
-    internal_address => hiera('havana::controller::address::management'),
-    region           => hiera('havana::region'),
+    password         => hiera('stein::swift::password'),
+    public_address   => hiera('stein::controller::address::api'),
+    admin_address    => hiera('stein::controller::address::management'),
+    internal_address => hiera('stein::controller::address::management'),
+    region           => hiera('stein::region'),
   }
 
   class { '::swift':
-    swift_hash_suffix => hiera('havana::swift::hash_suffix'),
+    swift_hash_suffix => hiera('stein::swift::hash_suffix'),
   }
 
   # sets up the proxy service
   class { '::swift::proxy':
-    proxy_local_net_ip => hiera('havana::controller::address::api'),
+    proxy_local_net_ip => hiera('stein::controller::address::api'),
     pipeline           => ['catch_errors', 'healthcheck', 'cache',
                            'ratelimit',    'swift3',
                            'authtoken',    'keystone',    'proxy-server'],
@@ -31,15 +31,15 @@ class havana::profile::swift::proxy {
            '::swift::proxy::healthcheck', ]: }
 
   class { '::swift::proxy::cache':
-    memcache_servers => [ hiera('havana::controller::address::management'), ]
+    memcache_servers => [ hiera('stein::controller::address::management'), ]
   }
 
   class { ['::swift::proxy::ratelimit',
            '::swift::proxy::swift3', ]: }
 
   class { '::swift::proxy::authtoken':
-    admin_password => hiera('havana::swift::password'),
-    auth_host      => hiera('havana::controller::address::management'),
+    admin_password => hiera('stein::swift::password'),
+    auth_host      => hiera('stein::controller::address::management'),
   }
 
   class { '::swift::proxy::keystone': }
@@ -59,7 +59,7 @@ class havana::profile::swift::proxy {
   }
 
   class { 'swift::ringserver':
-    local_net_ip => hiera('havana::controller::address::management'),
+    local_net_ip => hiera('stein::controller::address::management'),
   }
 
 }
