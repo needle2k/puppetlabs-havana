@@ -1,129 +1,253 @@
-forge "http://forge.puppetlabs.com"
+# Auto-generated Puppetfile for Puppet OpenStack project
 
-## The core OpenStack modules
+## OpenStack modules
+mod 'aodh',
+  :git => 'https://opendev.org/openstack/puppet-aodh',
+  :ref => 'master'
 
-mod "openstack",
-  :git => "git://github.com/stackforge/puppet-openstack",
-  :ref => "stable/havana"
+mod 'barbican',
+  :git => 'https://opendev.org/openstack/puppet-barbican',
+  :ref => 'master'
 
-mod "keystone",
-  :git => "git://github.com/stackforge/puppet-keystone",
-  :ref => "stable/havana"
+mod 'ceilometer',
+  :git => 'https://opendev.org/openstack/puppet-ceilometer',
+  :ref => 'master'
 
-mod "swift",
-  :git => "git://github.com/stackforge/puppet-swift",
-  :ref => "stable/havana"
+mod 'ceph',
+  :git => 'https://opendev.org/openstack/puppet-ceph',
+  :ref => 'master'
 
-mod "glance",
-  :git => "git://github.com/stackforge/puppet-glance",
-  :ref => "stable/havana"
+mod 'cinder',
+  :git => 'https://opendev.org/openstack/puppet-cinder',
+  :ref => 'master'
 
-mod "cinder",
-  :git => "git://github.com/stackforge/puppet-cinder",
-  :ref => "stable/havana"
+mod 'cloudkitty',
+  :git => 'https://opendev.org/openstack/puppet-cloudkitty',
+  :ref => 'master'
 
-mod "neutron",
-  :git => "git://github.com/stackforge/puppet-neutron",
-  :ref => "stable/havana"
+mod 'congress',
+  :git => 'https://opendev.org/openstack/puppet-congress',
+  :ref => 'master'
 
-mod "nova",
-  :git => "git://github.com/stackforge/puppet-nova",
-  :ref => "stable/havana"
+mod 'designate',
+  :git => 'https://opendev.org/openstack/puppet-designate',
+  :ref => 'master'
 
-mod "heat",
-  :git => "git://github.com/stackforge/puppet-heat",
-  :ref => "stable/havana"
+mod 'ec2api',
+  :git => 'https://opendev.org/openstack/puppet-ec2api',
+  :ref => 'master'
 
-mod "ceilometer",
-  :git => "git://github.com/stackforge/puppet-ceilometer",
-  :ref => "stable/havana"
+mod 'glance',
+  :git => 'https://opendev.org/openstack/puppet-glance',
+  :ref => 'master'
 
-mod "horizon",
-  :git => "git://github.com/stackforge/puppet-horizon",
-  :ref => "stable/havana"
+mod 'gnocchi',
+  :git => 'https://opendev.org/openstack/puppet-gnocchi',
+  :ref => 'master'
 
-mod "tempest",
-  :git => "git://github.com/stackforge/puppet-tempest",
-  :ref => "stable/havana"
+mod 'heat',
+  :git => 'https://opendev.org/openstack/puppet-heat',
+  :ref => 'master'
 
-mod "vswitch",
-  :git => "git://github.com/stackforge/puppet-vswitch",
-  :ref => "master"
+mod 'horizon',
+  :git => 'https://opendev.org/openstack/puppet-horizon',
+  :ref => 'master'
 
-## R10K doesn't handle dependencies, so let's handle them here
-# pointing to as many stable projects as possible
-# TODO automate this dependency list
+mod 'ironic',
+  :git => 'https://opendev.org/openstack/puppet-ironic',
+  :ref => 'master'
 
-mod "apache",
-  :git => "git://github.com/puppetlabs/puppetlabs-apache",
-  :ref => "0.x"
+mod 'keystone',
+  :git => 'https://opendev.org/openstack/puppet-keystone',
+  :ref => 'master'
 
-mod "inifile",
-  :git => "git://github.com/puppetlabs/puppetlabs-inifile",
-  :ref => "1.0.x"
+mod 'manila',
+  :git => 'https://opendev.org/openstack/puppet-manila',
+  :ref => 'master'
 
-mod "mysql",
-  :git => "git://github.com/puppetlabs/puppetlabs-mysql",
-  :ref => "0.x"
+mod 'mistral',
+  :git => 'https://opendev.org/openstack/puppet-mistral',
+  :ref => 'master'
 
-mod "stdlib",
-  :git => "git://github.com/puppetlabs/puppetlabs-stdlib",
-  :ref => "4.x"
+mod 'monasca',
+  :git => 'https://opendev.org/openstack/puppet-monasca',
+  :ref => 'master'
 
-mod "rsync",
-  :git => "git://github.com/puppetlabs/puppetlabs-rsync",
-  :ref => "0.2.0"
+mod 'murano',
+  :git => 'https://opendev.org/openstack/puppet-murano',
+  :ref => 'master'
 
-mod "xinetd",
-  :git => "git://github.com/puppetlabs/puppetlabs-xinetd",
-  :ref => "1.2.0"
+mod 'neutron',
+  :git => 'https://opendev.org/openstack/puppet-neutron',
+  :ref => 'master'
 
-mod "concat",
-  :git => "git://github.com/puppetlabs/puppetlabs-concat",
-  :ref => "1.0.2"
+mod 'nova',
+  :git => 'https://opendev.org/openstack/puppet-nova',
+  :ref => 'master'
 
-mod "memcached",
-  :git => "git://github.com/saz/puppet-memcached",
-  :ref => "658374848a6d2cf07f0bf714bc34709e9d0ee109"
+mod 'octavia',
+  :git => 'https://opendev.org/openstack/puppet-octavia',
+  :ref => 'master'
 
-mod "ssh",
-  :git => "git://github.com/saz/puppet-ssh",
-  :ref => "a0f5d5da20c91775c76c77d3b57b41f4245a260a"
+mod 'openstack_extras',
+  :git => 'https://opendev.org/openstack/puppet-openstack_extras',
+  :ref => 'master'
 
-mod "qpid",
-  :git => "git://github.com/dprince/puppet-qpid",
-  :ref => "1.0.2"
+mod 'openstacklib',
+  :git => 'https://opendev.org/openstack/puppet-openstacklib',
+  :ref => 'master'
 
-mod "sysctl",
-  :git => "git://github.com/duritong/puppet-sysctl"
+mod 'oslo',
+  :git => 'https://opendev.org/openstack/puppet-oslo',
+  :ref => 'master'
 
-mod "rabbitmq",
-  :git => "git://github.com/puppetlabs/puppetlabs-rabbitmq",
-  :ref => "2.x"
+mod 'ovn',
+  :git => 'https://opendev.org/openstack/puppet-ovn',
+  :ref => 'master'
 
-# indirect dependencies
+mod 'panko',
+  :git => 'https://opendev.org/openstack/puppet-panko',
+  :ref => 'master'
 
-mod "firewall",
-  :git => "git://github.com/puppetlabs/puppetlabs-firewall",
-  :ref => "1.0.x"
+mod 'placement',
+  :git => 'https://opendev.org/openstack/puppet-placement',
+  :ref => 'master'
 
-mod "apt",
-  :git => "git://github.com/puppetlabs/puppetlabs-apt",
-  :ref => "1.4.x"
+mod 'qdr',
+  :git => 'https://opendev.org/openstack/puppet-qdr',
+  :ref => 'master'
 
-mod "mongodb",
-  :git => "git://github.com/puppetlabs/puppetlabs-mongodb",
-  :ref => "0.7.0"
+mod 'sahara',
+  :git => 'https://opendev.org/openstack/puppet-sahara',
+  :ref => 'master'
 
-mod "ntp",
-  :git => "git://github.com/puppetlabs/puppetlabs-ntp",
-  :ref => "3.0.x"
+mod 'swift',
+  :git => 'https://opendev.org/openstack/puppet-swift',
+  :ref => 'master'
 
-mod "postgresql",
-  :git => "git://github.com/puppetlabs/puppetlabs-postgresql",
-  :ref => "3.3.x"
+mod 'tacker',
+  :git => 'https://opendev.org/openstack/puppet-tacker',
+  :ref => 'master'
 
-mod "puppetdb",
-  :git => "git://github.com/puppetlabs/puppet-puppetdb",
-  :ref => "1.5.x"
+mod 'tempest',
+  :git => 'https://opendev.org/openstack/puppet-tempest',
+  :ref => 'master'
+
+mod 'trove',
+  :git => 'https://opendev.org/openstack/puppet-trove',
+  :ref => 'master'
+
+mod 'vswitch',
+  :git => 'https://opendev.org/openstack/puppet-vswitch',
+  :ref => 'master'
+
+mod 'vitrage',
+  :git => 'https://opendev.org/openstack/puppet-vitrage',
+  :ref => 'master'
+
+mod 'watcher',
+  :git => 'https://opendev.org/openstack/puppet-watcher',
+  :ref => 'master'
+
+mod 'zaqar',
+  :git => 'https://opendev.org/openstack/puppet-zaqar',
+  :ref => 'master'
+
+## External modules
+mod 'powerdns',
+  :git => 'https://github.com/antonlindstrom/puppet-powerdns',
+  :ref => '0.0.5'
+
+mod 'kmod',
+  :git => 'https://github.com/camptocamp/puppet-kmod',
+  :ref => '2.3.0'
+
+mod 'sysctl',
+  :git => 'https://github.com/duritong/puppet-sysctl',
+  :ref => 'v0.0.12'
+
+mod 'ipaclient',
+  :git => 'https://github.com/joshuabaird/puppet-ipaclient',
+  :ref => '2.5.2'
+
+mod 'staging',
+  :git => 'https://github.com/nanliu/puppet-staging',
+  :ref => '1.0.4'
+
+mod 'apache',
+  :git => 'https://github.com/puppetlabs/puppetlabs-apache',
+  :ref => 'v5.0.0'
+
+mod 'apt',
+  :git => 'https://github.com/puppetlabs/puppetlabs-apt',
+  :ref => '2.4.0'
+
+mod 'concat',
+  :git => 'https://github.com/puppetlabs/puppetlabs-concat',
+  :ref => '2.2.1'
+
+mod 'firewall',
+  :git => 'https://github.com/puppetlabs/puppetlabs-firewall',
+  :ref => 'v2.0.0'
+
+mod 'inifile',
+  :git => 'https://github.com/puppetlabs/puppetlabs-inifile',
+  :ref => '2.2.0'
+
+mod 'mysql',
+  :git => 'https://github.com/puppetlabs/puppetlabs-mysql',
+  :ref => '6.2.0'
+
+mod 'postgresql',
+  :git => 'https://github.com/puppetlabs/puppetlabs-postgresql',
+  :ref => 'v6.1.0'
+
+mod 'rabbitmq',
+  :git => 'https://github.com/puppetlabs/puppetlabs-rabbitmq',
+  :ref => 'v9.0.0'
+
+mod 'rsync',
+  :git => 'https://github.com/puppetlabs/puppetlabs-rsync',
+  :ref => '1.1.1'
+
+mod 'stdlib',
+  :git => 'https://github.com/puppetlabs/puppetlabs-stdlib',
+  :ref => 'v6.0.0'
+
+mod 'vcsrepo',
+  :git => 'https://github.com/puppetlabs/puppetlabs-vcsrepo',
+  :ref => 'v3.0.0'
+
+mod 'git_resource',
+  :git => 'https://github.com/voxpupuli/puppet-git_resource',
+  :ref => 'v1.0.2'
+
+mod 'xinetd',
+  :git => 'https://github.com/puppetlabs/puppetlabs-xinetd',
+  :ref => 'v3.3.0'
+
+mod 'memcached',
+  :git => 'https://github.com/saz/puppet-memcached',
+  :ref => 'v3.4.0'
+
+mod 'python',
+  :git => 'https://github.com/voxpupuli/puppet-python',
+  :ref => 'v3.0.1'
+
+mod 'dns',
+  :git => 'https://github.com/theforeman/puppet-dns',
+  :ref => '6.1.0'
+
+mod 'archive',
+  :git => 'https://github.com/voxpupuli/puppet-archive',
+  :ref => 'v4.1.0'
+
+mod 'corosync',
+  :git => 'https://github.com/voxpupuli/puppet-corosync',
+  :ref => 'v5.0.0'
+
+mod 'ssh_keygen',
+  :git => 'https://github.com/voxpupuli/puppet-ssh_keygen',
+  :ref => 'v2.0.1'
+
 
