@@ -1,9 +1,9 @@
 # Profile to install the horizon web service
-class havana::profile::horizon {
+class stein::profile::horizon {
   class { '::horizon':
-    fqdn            => [ '127.0.0.1', hiera('havana::controller::address::api'), $::fqdn ],
-    secret_key      => hiera('havana::horizon::secret_key'),
-    cache_server_ip => hiera('havana::controller::address::management'),
+    fqdn            => [ '127.0.0.1', hiera('stein::controller::address::api'), $::fqdn ],
+    secret_key      => hiera('stein::horizon::secret_key'),
+    cache_server_ip => hiera('stein::controller::address::management'),
 
   }
 
